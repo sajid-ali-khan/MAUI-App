@@ -2,7 +2,54 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2.AttendancePage"
-             Title="AttendancePage">
-    <VerticalStackLayout>
+             xmlns:vm="clr-namespace:App2.ViewModels"
+             Title="Attendance">
+
+    <ContentPage.BindingContext>
+        <vm:SubjectsViewModel></vm:SubjectsViewModel>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="30">
+        <Label
+            Text="Your classes"
+            FontSize="24"
+            FontAttributes="Bold"></Label>
+
+        <CollectionView
+            ItemsSource="{Binding Subjects}"
+            >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="0, 10"
+                        Padding="16"
+                        HasShadow="True">
+                        <VerticalStackLayout
+                            Spacing="6">
+                            <Label
+                                Text="{Binding SubjectName}"
+                                TextColor="{StaticResource Primary}"
+                                FontAttributes="Bold"
+                                FontSize="18"></Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                            Text="Attendance: "></Span>
+                                        <Span
+                                            Text="{Binding Strength}"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <VerticalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="GoToDetails"></TapGestureRecognizer>
+                            </VerticalStackLayout.GestureRecognizers>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

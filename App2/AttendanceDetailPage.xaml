@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:App2.ViewModels"
              x:Class="App2.AttendanceDetailPage"
-             Title="AttendanceDetailPage">
+             Title="Attendance details">
     <ContentPage.BindingContext>
         <viewModels:StudentsViewModel />
     </ContentPage.BindingContext>
