@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="App2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:App2"
+    Shell.FlyoutBehavior="Flyout"
+    Title="App2">
+
+    <ShellContent
+        Title="Home"
+        FlyoutIcon="home2"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Attendance"
+        FlyoutIcon="attendance"
+        ContentTemplate="{DataTemplate local:AttendancePage}"
+        Route="AttendancePage"></ShellContent>
+
+    <ShellContent
+        Title="Apply for leave"
+        Icon="leave"
+        ContentTemplate="{DataTemplate local:LeavePage}"
+        Route="LeavePage"></ShellContent>
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="20">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Logout" />
+            </Grid.GestureRecognizers>
+            <HorizontalStackLayout Spacing="35">
+                <Image
+                    Source="logout"
+                    HeightRequest="24"
+                    VerticalOptions="Center" />
+                <Label
+                    Text="Logout"
+                    VerticalOptions="Center"
+                    TextColor="Red"
+                    FontAttributes="Bold" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+
+</Shell>
