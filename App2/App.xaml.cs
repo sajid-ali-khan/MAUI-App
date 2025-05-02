@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AttendanceDetailPage();
+            MainPage = new LoginPage();
         }
     }
 }
