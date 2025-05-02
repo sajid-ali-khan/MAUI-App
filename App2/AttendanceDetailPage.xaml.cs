@@ -6,4 +6,14 @@ public partial class AttendanceDetailPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void ChangeColor(object? sender, TappedEventArgs e)
+    {
+        if (sender is TapGestureRecognizer tap && tap.Parent is HorizontalStackLayout layout)
+        {
+            layout.BackgroundColor = layout.BackgroundColor == Colors.White
+                ? Colors.LightGray
+                : Colors.White;
+        }
+    }
 }
