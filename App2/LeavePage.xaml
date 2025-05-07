@@ -3,6 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2.LeavePage"
              xmlns:vm="clr-namespace:App2.ViewModels"
-             Title="LeavePage">
+             Title="Leave">
+
+    <ContentPage.BindingContext>
+        <vm:RecentLeavesViewModel></vm:RecentLeavesViewModel>
+    </ContentPage.BindingContext>
+
+    <ScrollView
+        Orientation="Vertical">
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20">
+
+            <VerticalStackLayout
+                Spacing="5">
+                <Label
+                    Text="Recent Leaves"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource Primary}"
+                ></Label>
+
+                <CollectionView
+                    ItemsSource="{Binding RecentLeaves}" 
+                    Margin="0, 10">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="0,5" BorderColor="LightGray">
+                                <VerticalStackLayout Spacing="10">
+                                    <Label Text="{Binding LeaveType}" FontSize="16" />
+                                    <Label Text="{Binding StartDate, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="14" TextColor="Gray" />
+                                    <Label Text="{Binding EndDate, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="14" TextColor="Gray" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <Button
+                Text="Apply for Leave"
+                Clicked="GoToLeaveForm"></Button>
+        </VerticalStackLayout>
+    </ScrollView>
     
 </ContentPage>

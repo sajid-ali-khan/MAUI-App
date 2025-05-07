@@ -9,12 +9,13 @@
     </ContentPage.BindingContext>
 
     <Grid RowDefinitions="Auto,*,Auto"
-          Padding="10"
+          Padding="10, 0, 10, 10"
           >
 
         <Frame
             CornerRadius="12"
-            Padding="2, 6">
+            Padding="0"
+            HasShadow="True">
             <SearchBar 
                 Grid.Row="0"
                 Placeholder="Search for name or roll..."
@@ -66,12 +67,14 @@
             <Button 
             Grid.Column="0"
             Text="Cancel"
+            CornerRadius="20"
             BackgroundColor="#f44336"
             HorizontalOptions="Fill"
             VerticalOptions="Fill" />
             <Button 
             Grid.Column="1"
             Text="Submit"
+            CornerRadius="20"
             BackgroundColor="#04AA6D"
             HorizontalOptions="Fill"
             VerticalOptions="Fill" />

@@ -6,4 +6,9 @@ public partial class LeavePage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void GoToLeaveForm(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(LeaveFormPage));
+    }
 }

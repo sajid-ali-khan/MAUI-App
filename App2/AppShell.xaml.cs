@@ -8,6 +8,7 @@ namespace App2
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(AttendanceDetailPage), typeof(AttendanceDetailPage));
+            Routing.RegisterRoute(nameof(LeaveFormPage), typeof(LeaveFormPage));
         }
 
         private void Logout(object? sender, TappedEventArgs e)
